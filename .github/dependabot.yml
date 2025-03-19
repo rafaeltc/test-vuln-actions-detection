@@ -1,0 +1,6 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions" # Specify the ecosystem for GitHub Actions
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "hourly" # Set the interval to hourly
