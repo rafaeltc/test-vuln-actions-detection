@@ -29,6 +29,9 @@ jobs:
       - name: another reviewdog
         uses: reviewdog/action-shellcheck@v1
 
+      - name: anotehr tj-actions
+        uses: tj-actions/eslint-changed-files@45.0.7
+
       - name: Lint changed files
         uses: tj-actions/changed-files@45.0.7
         with:
