@@ -1,0 +1,36 @@
+name: Lint Changed Files
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set up reviewdog
+        uses: reviewdog/action-setup@v1
+        with:
+          tool_name: 'eslint'
+          reporter: 'github-pr-check'
+
+      - name: Lint changed files
+        uses: tj-actions/eslint-changed-files@v10
+        with:
+          eslint_options: '--ext .js,.jsx,.ts,.tsx'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run reviewdog
+        run: reviewdog -reporter=github-pr-check
