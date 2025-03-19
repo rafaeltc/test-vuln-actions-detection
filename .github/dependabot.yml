@@ -3,4 +3,5 @@ updates:
   - package-ecosystem: "github-actions" # Specify the ecosystem for GitHub Actions
     directory: "/" # Location of package manifests
     schedule:
-      interval: "hourly" # Set the interval to hourly
+      interval: "cron"
+      time: "0 * * * *" # Runs at the start of every hour
