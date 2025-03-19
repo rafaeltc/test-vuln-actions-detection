@@ -27,7 +27,7 @@ jobs:
           reporter: 'github-pr-check'
 
       - name: Lint changed files
-        uses: tj-actions/eslint-changed-files@v10
+        uses: tj-actions/eslint-changed-files@v25
         with:
           eslint_options: '--ext .js,.jsx,.ts,.tsx'
           github_token: ${{ secrets.GITHUB_TOKEN }}
