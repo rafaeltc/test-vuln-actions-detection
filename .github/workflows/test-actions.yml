@@ -25,9 +25,12 @@ jobs:
         with:
           tool_name: 'eslint'
           reporter: 'github-pr-check'
+        
+      - name: another reviewdog
+        uses: reviewdog/action-shellcheck@v1
 
       - name: Lint changed files
-        uses: tj-actions/eslint-changed-files@v10
+        uses: tj-actions/changed-files@45.0.7
         with:
           eslint_options: '--ext .js,.jsx,.ts,.tsx'
           github_token: ${{ secrets.GITHUB_TOKEN }}
