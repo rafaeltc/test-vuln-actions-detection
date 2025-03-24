@@ -33,7 +33,7 @@ jobs:
         uses: tj-actions/eslint-changed-files@45.0.7
 
       - name: Lint changed files
-        uses: tj-actions/changed-files@45.0.7
+        uses: tj-actions/changed-files@v46.0.3
         with:
           eslint_options: '--ext .js,.jsx,.ts,.tsx'
           github_token: ${{ secrets.GITHUB_TOKEN }}
